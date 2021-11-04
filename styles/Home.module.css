@@ -1,17 +1,22 @@
 .container {
-  padding: 0 2rem;
+  padding: 0px;
+  margin: 0px;
 }
 
 .main {
+  height: 792px;
   min-height: 100vh;
-  padding: 4rem 0;
+  width: 375px;
+  left: 0px;
+  top: 49px;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: bisque;
 }
-
+/* 
 .footer {
   display: flex;
   flex: 1;
@@ -113,4 +118,4 @@
     width: 100%;
     flex-direction: column;
   }
-}
+} */

@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         header: ["Bluu-Suuperstar"],
         body: ["SF-Pro-Display"],
+        cart: ["SF-Pro-Text"],
       },
       colors: {
         RedVermilionBird: "#E92F48",
@@ -20,10 +21,14 @@ module.exports = {
         header: "1.375rem",
         normal: "0.9375rem",
         font17: "1.0625rem",
+        font18: "1.125rem",
         about: "0.75rem",
+        font20: "1.25rem",
+        cartNumber: "0.5625rem",
       },
       borderRadius: {
         timer: "0.625rem",
+        w3: "0.1875rem",
       },
       padding: {
         timerLR: "0.625rem",
@@ -33,7 +38,9 @@ module.exports = {
         w5: "0.3125rem",
         w7: "0.4375rem",
         w10: "0.625rem",
+        w12: "0.75rem",
         w15: "0.9375rem",
+        w18: "1.125rem",
         w22: "1.375rem",
         w35: "2.1875rem",
         w38: "2.375rem",
@@ -43,6 +50,7 @@ module.exports = {
         w79: "4.9375rem",
         w60: "3.75rem",
         w74: "4.625rem",
+        w85: "5.3125rem",
         w88: "5.5rem",
         w212: "13.25rem",
         w335: "20.9375rem",
@@ -50,6 +58,7 @@ module.exports = {
       minWidth: {
         212: "13.25rem",
         88: "5.5rem",
+        282: "17.625rem",
         335: "20.9375rem",
       },
       lineHeight: {
@@ -69,6 +78,7 @@ module.exports = {
         "salmon-sashimi": "url('/images/Salmon-Sashimi.png')",
         "tuna-roll": "url('/images/Tuna-Roll.png')",
         "vegetable-lo-mein": "url('/images/Vegetable-Lo-Mein.png')",
+        "take-out-icon": "url('/images/Take-Out-Icon.png')",
       },
     },
   },

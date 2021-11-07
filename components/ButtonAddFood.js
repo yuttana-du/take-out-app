@@ -1,23 +1,27 @@
 import React, { useState } from "react";
 import mock from "../constant/mock";
+import Cross from "../public/icons/cross.svg";
 
-const ButtonAddFood = ({ checkAdd, onClick, quantity, price }) => {
-  // console.log(checkAdd);
-
+const ButtonAddFood = ({ isAdded }) => {
   return (
     <div
       className={`flex flex-row justify-center items-center rounded-timer cursor-pointer bg-${
-        checkAdd ? "pink" : "RedVermilionBird"
+        isAdded ? "pink" : "RedVermilionBird"
       } min-w-88 w-w88 h-w38 my-w10 leading-A18 tracking-A8`}
-      onClick={onClick}
     >
-      <p
+      <div
         className={`text-${
-          checkAdd ? "brow" : "white"
+          isAdded ? "brow" : "white"
         } font-body text-normal font-bold`}
       >
-        {checkAdd ? `x Added ${quantity} ` : `Add ${price}`}
-      </p>
+        {isAdded ? (
+          <span className="flex items-center">
+            <Cross className="mr-1" /> Added 1
+          </span>
+        ) : (
+          `Add 4.99`
+        )}
+      </div>
     </div>
   );
 };

@@ -1,16 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import Quantity from "./Quantity";
-import mock from "../constant/mock";
-import ButtonAddFood from "./ButtonAddFood";
+import Quantity from "../Quantity";
+import ButtonAddFood from "../ButtonAddFood";
 
-const Food = ({ value }) => {
-  const [add, setAdd] = useState(false);
-  const [quantity, setQuantity] = useState(1);
-  const onClickAdd = () => {
-    setAdd(!add);
-  };
-
+const Food = ({ value, isAdded }) => {
   return (
     <div className="flex flex-row justify-between items-center  h-20 my-w15">
       <div className="flex flex-row items-center">
@@ -24,15 +17,10 @@ const Food = ({ value }) => {
           <span className=" text-about text-DeepGrey mb-2">
             {value.description}
           </span>
-          <Quantity quantity={quantity} setQuantity={setQuantity} />
+          <Quantity quantity={1} />
         </div>
       </div>
-      <ButtonAddFood
-        onClick={onClickAdd}
-        checkAdd={add}
-        quantity={quantity}
-        price={value.price}
-      />
+      <ButtonAddFood isAdded={isAdded} />
     </div>
   );
 };

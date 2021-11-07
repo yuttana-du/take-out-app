@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Timer = () => {
+const Timer = ({ onSetTime, onSendTime }) => {
   const testZero = "0";
   const [time, setTime] = useState(300);
   const [minute, setMinute] = useState("5");

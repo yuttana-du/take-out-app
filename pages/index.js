@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
-import ListFood from "../components/ListFood";
-import Cart from "../components/Cart";
+import Foods from "../components/Foods/Foods";
+import ButtonCart from "../components/ButtonCart";
 
 const Home = () => {
+  const [leftTime, setLeftTime] = useState(300);
+
   return (
     <div className="h-screen flex flex-col justify-start mx-5">
       <Header />
-      <ListFood />
-      <Cart />
+      <Foods />
+      <ButtonCart />
     </div>
   );
 };

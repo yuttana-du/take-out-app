@@ -7,7 +7,7 @@ import FoodItem from "./FoodItem";
 import mock from "../../constant/mock";
 
 const ListFood = ({ onAddCart, onHandlerCartQuantity, onDropCart }) => {
-  const [cart, setCart] = useRecoilState(cartRecoil);
+  const [cart] = useRecoilState(cartRecoil);
 
   return (
     <div className="overflow-y-auto">

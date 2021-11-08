@@ -15,9 +15,7 @@ const CheckOut = () => {
   const [time, setTime] = useRecoilState(timeRecoil);
   const [minute, setMinute] = useState("5");
   const [second, setSecond] = useState("00");
-  const [cart, setCart] = useRecoilState(cartRecoil);
-
-  // console.log("cart", cart);
+  const [cart] = useRecoilState(cartRecoil);
 
   useEffect(() => {
     if (time < 1) {

@@ -13,12 +13,11 @@ const Food = ({
   const [isAdded, setIsAdded] = useState(false);
 
   useEffect(() => {
-    console.log("cart", cart);
     if (cart.length) {
       const reQuantity = cart.find((items) => {
         return items.id === value.id;
       });
-      console.log("test", reQuantity?.quantity);
+
       setQuantity(reQuantity?.quantity);
       if (reQuantity?.quantity !== undefined) setIsAdded(true);
       if (reQuantity?.quantity === undefined) {
@@ -41,13 +40,11 @@ const Food = ({
 
   const onClickAdd = () => {
     setIsAdded(true);
-    // console.log("quantity", quantity);
     onAddCart(value, quantity);
   };
 
   const onClickUnAdd = () => {
     setIsAdded(false);
-    // console.log("onClickUnAdd");
     onDropCart(value.id);
   };
 

@@ -40,8 +40,6 @@ const Home = () => {
   const onAddCart = (data, quantity) => {
     const addData = { ...data, quantity };
     setCart(cart.concat(addData));
-    // setCartRecoil(cart.concat(addData));
-    // console.log("addCart", cart);
   };
 
   const onDropCart = (id) => {
@@ -51,7 +49,6 @@ const Home = () => {
       });
     }
     setCart(deleteData);
-    // setCartRecoil(deleteData);
   };
 
   const onHandlerCartQuantity = (id, quantity) => {
@@ -62,10 +59,7 @@ const Home = () => {
         }
         return items;
       });
-      // console.log("addQuantity", QuantityCart);
-      // console.log(QuantityCart);
       setCart(QuantityCart);
-      // setCartRecoil(QuantityCart);
     }
   };
 

@@ -26,7 +26,7 @@ const Cart = ({ isOpen, cart }) => {
           .toFixed(2)}{" "}
         <div className="flex flex-row justify-center items-center relative">
           <SymbolCart className="ml-1" />
-          <div class="flex flex-row justify-center items-center text-cartNumber rounded-xl font-cart absolute  -top-0.5 left-6  bg-white font-bold w-w12 h-w12 text-RedVermilionBird">
+          <div className="flex flex-row justify-center items-center text-cartNumber rounded-xl font-cart absolute  -top-0.5 left-6  bg-white font-bold w-w12 h-w12 text-RedVermilionBird">
             {cart.reduce((acc, cur) => acc + cur.quantity, 0)}
           </div>
         </div>

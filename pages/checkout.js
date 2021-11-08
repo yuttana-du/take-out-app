@@ -1,36 +1,46 @@
-import react, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Router from "next/router";
+import { useRecoilState } from "recoil";
+import { useRecoilValue } from "recoil";
 
 import Order from "../components/Order/Order";
 import Summary from "../components/Summary";
+import cartRecoil from "../store/cart";
+import timeRecoil from "../store/time";
 
 import Arrow from "../public/icons/leftarrow.svg";
 import Add from "../public/icons/add.svg";
 
 const CheckOut = () => {
-  const [mock, setMock] = useState([
-    {
-      id: "1",
-      name: "California Roll",
-      description: "crab & cucumber",
-      price: 4.99,
-      quantity: 2,
-    },
-    {
-      id: "2",
-      name: "Tuna Roll",
-      description: "tuna & cucumber",
-      price: 4.99,
-      quantity: 2,
-    },
-    {
-      id: "3",
-      name: "Salmon Roll",
-      description: "salmon & cucumber",
-      price: 4.99,
-      quantity: 3,
-    },
-  ]);
+  const [time, setTime] = useRecoilState(timeRecoil);
+  const [minute, setMinute] = useState("5");
+  const [second, setSecond] = useState("00");
+  const [cart, setCart] = useRecoilState(cartRecoil);
+
+  // console.log("cart", cart);
+
+  useEffect(() => {
+    if (time < 1) {
+      console.log("left to order");
+    }
+    setMinute(Math.floor(time / 60));
+    if (time % 60 < 10) {
+      setSecond("0" + (time % 60));
+    } else {
+      setSecond(time % 60);
+    }
+
+    const timer = setTimeout(() => {
+      setTime(time - 1);
+    }, 1000);
+
+    if (time < 1) {
+      clearTimeout(timer);
+    }
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [time]);
 
   const handleClickIndex = () => {
     Router.push({ pathname: "/" });
@@ -40,7 +50,7 @@ const CheckOut = () => {
     <div className="h-screen flex flex-col justify-start font-body leading-A18 tracking-A8 mt-10">
       <div className="flex flex-row  justify-between items-center mx-5  ">
         <div className="cursor-pointer">
-          <Arrow />
+          <Arrow onClick={handleClickIndex} />
         </div>
         <h5 className=" text-font20 text-DeepGrey ">Express Cart</h5>
         <div className=""></div>
@@ -62,8 +72,8 @@ const CheckOut = () => {
           </div>
         </div>
         <div>
-          <Order value={mock} />
-          <Summary value={mock} />
+          <Order value={cart} />
+          <Summary value={cart} minute={minute} second={second} />
         </div>
       </div>
     </div>

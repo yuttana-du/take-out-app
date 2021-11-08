@@ -1,6 +1,6 @@
 import Timer from "./Timer";
 
-const Header = (props) => {
+const Header = ({ second, minute }) => {
   return (
     <div className="flex flex-row justify-between align-text-top mt-10 mb-w10 ">
       <div className="flex flex-col  tracking-A8">
@@ -15,7 +15,7 @@ const Header = (props) => {
           <span className="text-BlackTortoise font-semibold">10:00pm</span>
         </div>
       </div>
-      <Timer />
+      <Timer minute={minute} second={second} />
     </div>
   );
 };

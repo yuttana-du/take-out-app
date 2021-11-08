@@ -34,20 +34,6 @@ const mock = [
     price: 5.99,
     picture: "vegetable-lo-mein",
   },
-  {
-    id: "1",
-    name: "California Roll",
-    description: "crab & cucumber",
-    price: 4.99,
-    picture: "califorina-roll",
-  },
-  {
-    id: "2",
-    name: "Tuna Roll",
-    description: "tuna & cucumber",
-    price: 4.99,
-    picture: "tuna-roll",
-  },
 ];
 
 export default mock;

@@ -1,11 +1,61 @@
 import React, { useState, useEffect } from "react";
-
 import Quantity from "../Quantity";
 import ButtonAddFood from "../ButtonAddFood";
 
-const Food = ({ value, isAdded }) => {
+const Food = ({
+  value,
+  onAddCart,
+  onHandlerCartQuantity,
+  onDropCart,
+  cart,
+}) => {
+  const [quantity, setQuantity] = useState(1);
+  const [isAdded, setIsAdded] = useState(false);
+
+  useEffect(() => {
+    console.log("cart", cart);
+    if (cart.length) {
+      const reQuantity = cart.find((items) => {
+        return items.id === value.id;
+      });
+      console.log("test", reQuantity?.quantity);
+      setQuantity(reQuantity?.quantity);
+      if (reQuantity?.quantity !== undefined) setIsAdded(true);
+      if (reQuantity?.quantity === undefined) {
+        setQuantity(1);
+      }
+    }
+  }, []);
+
+  const onAddQuantity = () => {
+    setQuantity(quantity + 1);
+    onHandlerCartQuantity(value.id, quantity + 1);
+  };
+
+  const onDropQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+      onHandlerCartQuantity(value.id, quantity - 1);
+    }
+  };
+
+  const onClickAdd = () => {
+    setIsAdded(true);
+    // console.log("quantity", quantity);
+    onAddCart(value, quantity);
+  };
+
+  const onClickUnAdd = () => {
+    setIsAdded(false);
+    // console.log("onClickUnAdd");
+    onDropCart(value.id);
+  };
+
   return (
-    <div className="flex flex-row justify-between items-center  h-20 my-w15">
+    <div
+      className="flex flex-row justify-between items-center  h-20 my-w15"
+      key={value.id}
+    >
       <div className="flex flex-row items-center">
         <div
           className={`h-20 w-20 bg-no-repeat bg-right bg-${value.picture} bg-Container rounded-timer mr-w22`}
@@ -17,10 +67,20 @@ const Food = ({ value, isAdded }) => {
           <span className=" text-about text-DeepGrey mb-2">
             {value.description}
           </span>
-          <Quantity quantity={1} />
+          <Quantity
+            quantity={quantity}
+            onAddQuantity={onAddQuantity}
+            onDropQuantity={onDropQuantity}
+          />
         </div>
       </div>
-      <ButtonAddFood isAdded={isAdded} />
+      <ButtonAddFood
+        isAdded={isAdded}
+        quantity={quantity}
+        value={value}
+        onClickAdd={onClickAdd}
+        onClickUnAdd={onClickUnAdd}
+      />
     </div>
   );
 };

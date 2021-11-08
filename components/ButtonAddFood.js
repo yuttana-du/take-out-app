@@ -2,12 +2,19 @@ import React, { useState } from "react";
 import mock from "../constant/mock";
 import Cross from "../public/icons/cross.svg";
 
-const ButtonAddFood = ({ isAdded }) => {
+const ButtonAddFood = ({
+  isAdded,
+  quantity,
+  value,
+  onClickAdd,
+  onClickUnAdd,
+}) => {
   return (
     <div
       className={`flex flex-row justify-center items-center rounded-timer cursor-pointer bg-${
         isAdded ? "pink" : "RedVermilionBird"
       } min-w-88 w-w88 h-w38 my-w10 leading-A18 tracking-A8`}
+      onClick={isAdded ? onClickUnAdd : onClickAdd}
     >
       <div
         className={`text-${
@@ -16,10 +23,10 @@ const ButtonAddFood = ({ isAdded }) => {
       >
         {isAdded ? (
           <span className="flex items-center">
-            <Cross className="mr-1" /> Added 1
+            <Cross className="mr-1" /> Added {quantity}
           </span>
         ) : (
-          `Add 4.99`
+          `Add ${value.price}`
         )}
       </div>
     </div>

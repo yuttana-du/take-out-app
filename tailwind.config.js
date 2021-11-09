@@ -14,7 +14,7 @@ module.exports = {
         DeepGrey: "#7E8389",
         Container: "#F2F2F2",
         white: "#FFFFFF",
-        pink: "#F2C9C9",
+        softPink: "#F2C9C9",
         brow: "#741C28",
       },
       fontSize: {

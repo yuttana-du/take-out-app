@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import mock from "../constant/mock";
 import Cross from "../public/icons/cross.svg";
 
@@ -9,11 +9,21 @@ const ButtonAddFood = ({
   onClickAdd,
   onClickUnAdd,
 }) => {
+  const [colors, setColors] = useState("softPink");
+  useEffect(() => {
+    if (isAdded) {
+      setColors("softPink");
+    } else {
+      setColors("RedVermilionBird");
+    }
+  }, [isAdded]);
+
+  // ${
+  //   isAdded ? "softPink" : "RedVermilionBird"
+  // }
   return (
     <div
-      className={`flex flex-row justify-center items-center rounded-timer cursor-pointer bg-${
-        isAdded ? "pink" : "RedVermilionBird"
-      } min-w-88 w-w88 h-w38 my-w10 leading-A18 tracking-A8`}
+      className={`flex flex-row justify-center items-center rounded-timer cursor-pointer bg-${colors} min-w-88 w-w88 h-w38 my-w10 leading-A18 tracking-A8`}
       onClick={isAdded ? onClickUnAdd : onClickAdd}
     >
       <div

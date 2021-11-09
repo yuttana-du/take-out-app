@@ -9,12 +9,12 @@ const ButtonAddFood = ({
   onClickAdd,
   onClickUnAdd,
 }) => {
-  const [colors, setColors] = useState("softPink");
+  const [colors, setColors] = useState("RedVermilionBird");
   useEffect(() => {
     if (isAdded) {
-      setColors("softPink");
-    } else {
       setColors("RedVermilionBird");
+    } else {
+      setColors("softPink");
     }
   }, [isAdded]);
 

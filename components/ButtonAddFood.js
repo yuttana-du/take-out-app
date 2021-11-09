@@ -12,15 +12,12 @@ const ButtonAddFood = ({
   const [colors, setColors] = useState("bg-RedVermilionBird");
   useEffect(() => {
     if (isAdded) {
-      setColors("bg-softPink");
+      setColors("bg-SoftPink");
     } else {
       setColors("bg-RedVermilionBird");
     }
   }, [isAdded]);
 
-  // ${
-  //   isAdded ? "softPink" : "RedVermilionBird"
-  // }
   return (
     <div
       className={`flex flex-row justify-center items-center rounded-timer cursor-pointer ${colors} min-w-88 w-w88 h-w38 my-w10 leading-A18 tracking-A8`}

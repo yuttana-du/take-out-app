@@ -10,11 +10,11 @@ module.exports = {
       },
       colors: {
         RedVermilionBird: "#E92F48",
-        BlackTortoise: "#F2C9C9",
+        BlackTortoise: "#424242",
         DeepGrey: "#7E8389",
         Container: "#F2F2F2",
         white: "#FFFFFF",
-        softPink: "#424242",
+        SoftPink: "#F2C9C9",
         brow: "#741C28",
       },
       fontSize: {

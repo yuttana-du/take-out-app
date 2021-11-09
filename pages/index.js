@@ -71,6 +71,7 @@ const Home = () => {
         onHandlerCartQuantity={onHandlerCartQuantity}
         onDropCart={onDropCart}
       />
+
       <ButtonCart cart={cart} isOpen={cart.length} />
     </div>
   );

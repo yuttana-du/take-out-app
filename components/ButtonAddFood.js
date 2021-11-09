@@ -9,12 +9,12 @@ const ButtonAddFood = ({
   onClickAdd,
   onClickUnAdd,
 }) => {
-  const [colors, setColors] = useState("RedVermilionBird");
+  const [colors, setColors] = useState("bg-RedVermilionBird");
   useEffect(() => {
     if (isAdded) {
-      setColors("RedVermilionBird");
+      setColors("bg-RedVermilionBird");
     } else {
-      setColors("softPink");
+      setColors("bg-softPink");
     }
   }, [isAdded]);
 
@@ -23,7 +23,7 @@ const ButtonAddFood = ({
   // }
   return (
     <div
-      className={`flex flex-row justify-center items-center rounded-timer cursor-pointer bg-${colors} min-w-88 w-w88 h-w38 my-w10 leading-A18 tracking-A8`}
+      className={`flex flex-row justify-center items-center rounded-timer cursor-pointer ${colors} min-w-88 w-w88 h-w38 my-w10 leading-A18 tracking-A8`}
       onClick={isAdded ? onClickUnAdd : onClickAdd}
     >
       <div

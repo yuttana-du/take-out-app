@@ -12,9 +12,9 @@ const ButtonAddFood = ({
   const [colors, setColors] = useState("bg-RedVermilionBird");
   useEffect(() => {
     if (isAdded) {
-      setColors("bg-RedVermilionBird");
-    } else {
       setColors("bg-softPink");
+    } else {
+      setColors("bg-RedVermilionBird");
     }
   }, [isAdded]);
 

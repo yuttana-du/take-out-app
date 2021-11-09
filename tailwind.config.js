@@ -72,14 +72,14 @@ module.exports = {
         h26: "26px",
         h30: "30px",
       },
-      backgroundImage: {
+      backgroundImage: () => ({
         "califorina-roll": "url('/images/califorina-roll.png')",
         "salmon-roll": "url('/images/Salmon-Roll.png')",
         "salmon-sashimi": "url('/images/Salmon-Sashimi.png')",
         "tuna-roll": "url('/images/Tuna-Roll.png')",
         "vegetable-lo-mein": "url('/images/Vegetable-Lo-Mein.png')",
         "take-out-icon": "url('/images/Take-Out-Icon.png')",
-      },
+      }),
     },
   },
   variants: {
